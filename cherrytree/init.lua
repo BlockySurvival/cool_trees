@@ -42,8 +42,8 @@ local function grow_new_cherrytree_tree(pos)
 		minetest.get_node_timer(pos):start(math.random(240, 600))
 		return
 	end
-
-	minetest.place_schematic({x = pos.x-2, y = pos.y, z = pos.z-2}, modpath.."/schematics/cherrytree.mts", "0", nil, true)
+	minetest.remove_node(pos)
+	minetest.place_schematic({x = pos.x-2, y = pos.y, z = pos.z-2}, modpath.."/schematics/cherrytree.mts", "0", nil, false)
 end
 
 --
