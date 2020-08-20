@@ -209,7 +209,7 @@ minetest.register_node("bamboo:sprout", {
 	walkable = false,
 	groups = {
 		snappy = 3, attached_node = 1, flammable = 2,
-		dig_immediate = 3, ethereal_sapling = 1
+		dig_immediate = 3, sapling = 1
 	},
 	sounds = default.node_sound_defaults(),
 	selection_box = {
