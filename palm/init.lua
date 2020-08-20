@@ -2,9 +2,6 @@
 -- Palm Tree
 --
 
-local modname = "palm"
-local modpath = minetest.get_modpath(modname)
-
 -- internationalization boilerplate
 local S = minetest.get_translator(minetest.get_current_modname())
 
@@ -173,7 +170,6 @@ minetest.register_decoration({
 minetest.register_node("palm:sapling", {
 	description = S("Palm Sapling"),
 	drawtype = "plantlike",
-	visual_scale = 1.0,
 	tiles = {"palm_sapling.png"},
 	inventory_image = "palm_sapling.png",
 	wield_image = "palm_sapling.png",
@@ -236,7 +232,6 @@ minetest.register_node("palm:wood", {
 minetest.register_node("palm:leaves", {
 	description = S("Palm Leaves"),
 	drawtype = "allfaces_optional",
-	visual_scale = 1.2,
 	tiles = {"palm_leaves.png"},
 	inventory_image = "palm_leaves.png",
 	wield_image = "palm_leaves.png",
@@ -405,7 +400,7 @@ default.register_leafdecay({
 
 --Stairs
 
-if minetest.get_modpath("stairs") ~= nil then	
+if minetest.get_modpath("stairs") ~= nil then
 	stairs.register_stair_and_slab(
 		"palm_trunk",
 		"palm:trunk",
@@ -417,7 +412,7 @@ if minetest.get_modpath("stairs") ~= nil then
 	)
 end
 
-if minetest.get_modpath("bonemeal") ~= nil then	
+if minetest.get_modpath("bonemeal") ~= nil then
 	bonemeal:add_sapling({
 		{"palm:sapling", grow_new_palm_tree, "soil"},
 		{"palm:sapling", grow_new_palm_tree, "sand"},
