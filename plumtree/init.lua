@@ -179,6 +179,8 @@ minetest.register_node("plumtree:leaves", {
 	description = S("Plumtree Leaves"),
 	drawtype = "allfaces_optional",
 	tiles = {"plumtree_leaves.png"},
+	inventory_image = "plumtree_leaves.png",
+	wield_image = "plumtree_leaves.png",
 	paramtype = "light",
 	walkable = true,
 	waving = 1,
