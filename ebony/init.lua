@@ -119,8 +119,6 @@ minetest.register_node("ebony:leaves", {
 	description = S("Ebony Leaves"),
 	drawtype = "allfaces_optional",
 	tiles = {"ebony_leaves.png"},
-	inventory_image = "ebony_leaves.png",
-	wield_image = "ebony_leaves.png",
 	paramtype = "light",
 	walkable = true,
 	waving = 1,
@@ -216,7 +214,7 @@ minetest.register_node("ebony:persimmon", {
 		fixed = {-3 / 16, -7 / 16, -3 / 16, 3 / 16, 4 / 16, 3 / 16}
 	},
 	groups = {fleshy = 3, dig_immediate = 3, flammable = 2,
-		leafdecay = 3, leafdecay_drop = 1},
+		attached_node = 1, leafdecay = 3, leafdecay_drop = 1},
 	on_use = minetest.item_eat(4),
 	sounds = default.node_sound_leaves_defaults(),
 
@@ -261,7 +259,7 @@ minetest.register_lbm({
 
 default.register_leafdecay({
 	trunks = {"ebony:trunk"},
-	leaves = {"ebony:leaves"},
+	leaves = {"ebony:leaves","ebony:persimmon","ebony:creeper","ebony:creeper_leaves","ebony:liana"},
 	radius = 3,
 })
 

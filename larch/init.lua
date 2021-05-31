@@ -117,8 +117,6 @@ minetest.register_node("larch:leaves", {
 	description = S("Larch Leaves"),
 	drawtype = "allfaces_optional",
 	tiles = {"larch_leaves.png"},
-	inventory_image = "larch_leaves.png",
-	wield_image = "larch_leaves.png",
 	paramtype = "light",
 	walkable = true,
 	waving = 1,
@@ -193,7 +191,7 @@ minetest.register_lbm({
 default.register_leafdecay({
 	trunks = {"larch:trunk"},
 	leaves = {"larch:leaves"},
-	radius = 3,
+	radius = 4,
 })
 
 --Stairs

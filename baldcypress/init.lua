@@ -117,8 +117,6 @@ minetest.register_node("baldcypress:leaves", {
 	description = S("Bald Cypress Leaves"),
 	drawtype = "allfaces_optional",
 	tiles = {"baldcypress_leaves.png"},
-	inventory_image = "baldcypress_leaves.png",
-	wield_image = "baldcypress_leaves.png",
 	paramtype = "light",
 	walkable = true,
 	waving = 1,
@@ -212,7 +210,7 @@ minetest.register_lbm({
 
 default.register_leafdecay({
 	trunks = {"baldcypress:trunk"},
-	leaves = {"baldcypress:leaves"},
+	leaves = {"baldcypress:leaves","baldcypress:liana","baldcypress:dry_branches"},
 	radius = 3,
 })
 

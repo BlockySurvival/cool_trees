@@ -6,7 +6,6 @@ local modname = "mahogany"
 local modpath = minetest.get_modpath(modname)
 local mg_name = minetest.get_mapgen_setting("mg_name")
 
-
 -- internationalization boilerplate
 local S = minetest.get_translator(minetest.get_current_modname())
 
@@ -119,8 +118,6 @@ minetest.register_node("mahogany:leaves", {
 	description = S("Mahogany Leaves"),
 	drawtype = "allfaces_optional",
 	tiles = {"mahogany_leaves.png"},
-	inventory_image = "mahogany_leaves.png",
-	wield_image = "mahogany_leaves.png",
 	paramtype = "light",
 	walkable = true,
 	waving = 1,
@@ -236,7 +233,7 @@ minetest.register_lbm({
 
 default.register_leafdecay({
 	trunks = {"mahogany:trunk"},
-	leaves = {"mahogany:leaves"},
+	leaves = {"mahogany:leaves","mahogany:creeper"},
 	radius = 3,
 })
 
