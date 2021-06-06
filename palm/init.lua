@@ -231,8 +231,6 @@ minetest.register_node("palm:leaves", {
 	description = S("Palm Leaves"),
 	drawtype = "allfaces_optional",
 	tiles = {"palm_leaves.png"},
-	inventory_image = "palm_leaves.png",
-	wield_image = "palm_leaves.png",
 	paramtype = "light",
 	walkable = true,
 	waving = 1,

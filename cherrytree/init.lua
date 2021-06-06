@@ -25,7 +25,7 @@ minetest.register_node("cherrytree:cherries", {
 		fixed = {-3 / 16, -7 / 16, -3 / 16, 3 / 16, 4 / 16, 3 / 16}
 	},
 	groups = {fleshy = 3, dig_immediate = 3, flammable = 2,
-		leafdecay = 3, leafdecay_drop = 1},
+		attached_node = 1, leafdecay = 3, leafdecay_drop = 1},
 	on_use = minetest.item_eat(2),
 	sounds = default.node_sound_leaves_defaults(),
 
@@ -160,8 +160,6 @@ minetest.register_node("cherrytree:blossom_leaves", {
 	description = S("Cherrytree Blossom Leaves"),
 	drawtype = "allfaces_optional",
 	tiles = {"cherrytree_blossom_leaves.png"},
-	inventory_image = "cherrytree_blossom_leaves.png",
-	wield_image = "cherrytree_blossom_leaves.png",
 	paramtype = "light",
 	walkable = true,
 	waving = 1,
@@ -193,8 +191,6 @@ minetest.register_node("cherrytree:leaves", {
 	description = S("Cherrytree Leaves"),
 	drawtype = "allfaces_optional",
 	tiles = {"cherrytree_leaves.png"},
-	inventory_image = "cherrytree_leaves.png",
-	wield_image = "cherrytree_leaves.png",
 	paramtype = "light",
 	walkable = true,
 	waving = 1,
@@ -247,7 +243,7 @@ minetest.register_lbm({
 
 default.register_leafdecay({
 	trunks = {"cherrytree:trunk"},
-	leaves = {"cherrytree:leaves"},
+	leaves = {"cherrytree:leaves","cherrytree:blossom_leaves","cherrytree:cherries"},
 	radius = 3,
 })
 

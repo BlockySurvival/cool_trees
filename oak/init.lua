@@ -25,7 +25,7 @@ minetest.register_node("oak:acorn", {
 		fixed = {-3 / 16, -7 / 16, -3 / 16, 3 / 16, 4 / 16, 3 / 16}
 	},
 	groups = {fleshy = 3, dig_immediate = 3, flammable = 2,
-		leafdecay = 3, leafdecay_drop = 1},
+		attached_node = 1, leafdecay = 3, leafdecay_drop = 1},
 	on_use = minetest.item_eat(2),
 	sounds = default.node_sound_leaves_defaults(),
 
@@ -153,8 +153,6 @@ minetest.register_node("oak:leaves", {
 	description = S("Oak Leaves"),
 	drawtype = "allfaces_optional",
 	tiles = {"oak_leaves.png"},
-	inventory_image = "oak_leaves.png",
-	wield_image = "oak_leaves.png",
 	paramtype = "light",
 	walkable = true,
 	waving = 1,
@@ -206,7 +204,7 @@ minetest.register_lbm({
 
 default.register_leafdecay({
 	trunks = {"oak:trunk"},
-	leaves = {"oak:leaves"},
+	leaves = {"oak:leaves","oak:acorn"},
 	radius = 3,
 })
 

@@ -176,8 +176,6 @@ minetest.register_node("bamboo:leaves", {
 	description = S("Bamboo Leaves"),
 	drawtype = "allfaces_optional",
 	tiles = {"bamboo_leaves.png"},
-	inventory_image = "bamboo_leaves.png",
-	wield_image = "bamboo_leaves.png",
 	paramtype = "light",
 	walkable = true,
 	waving = 1,

@@ -25,7 +25,7 @@ minetest.register_node("plumtree:plum", {
 		fixed = {-3 / 16, -7 / 16, -3 / 16, 3 / 16, 4 / 16, 3 / 16}
 	},
 	groups = {fleshy = 3, dig_immediate = 3, flammable = 2,
-		leafdecay = 3, leafdecay_drop = 1},
+		attached_node = 1, leafdecay = 3, leafdecay_drop = 1},
 	on_use = minetest.item_eat(2),
 	sounds = default.node_sound_leaves_defaults(),
 
@@ -61,7 +61,7 @@ local function grow_new_plumtree_tree(pos)
 		return
 	end
 	minetest.remove_node(pos)
-	minetest.place_schematic({x = pos.x-4, y = pos.y-1, z = pos.z-4}, modpath.."/schematics/plumtree.mts", "0", nil, true)
+	minetest.place_schematic({x = pos.x-4, y = pos.y, z = pos.z-4}, modpath.."/schematics/plumtree.mts", "0", nil, true)
 end
 
 --
@@ -179,8 +179,6 @@ minetest.register_node("plumtree:leaves", {
 	description = S("Plumtree Leaves"),
 	drawtype = "allfaces_optional",
 	tiles = {"plumtree_leaves.png"},
-	inventory_image = "plumtree_leaves.png",
-	wield_image = "plumtree_leaves.png",
 	paramtype = "light",
 	walkable = true,
 	waving = 1,
@@ -233,7 +231,7 @@ minetest.register_lbm({
 
 default.register_leafdecay({
 	trunks = {"plumtree:trunk"},
-	leaves = {"plumtree:leaves"},
+	leaves = {"plumtree:leaves","plumtree:plum"},
 	radius = 3,
 })
 
