@@ -61,7 +61,7 @@ local function grow_new_plumtree_tree(pos)
 		return
 	end
 	minetest.remove_node(pos)
-	minetest.place_schematic({x = pos.x-4, y = pos.y, z = pos.z-4}, modpath.."/schematics/plumtree.mts", "0", nil, true)
+	minetest.place_schematic({x = pos.x-4, y = pos.y, z = pos.z-4}, modpath.."/schematics/plumtree.mts", "0", nil, false)
 end
 
 --
